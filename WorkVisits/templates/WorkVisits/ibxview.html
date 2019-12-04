@@ -1,0 +1,14 @@
+{% extends 'WorkVisits/base.html'%}
+
+{% block content %}
+<p>IBX:</p>
+
+<ul>
+    {% for ibx in ibxs %}
+    <li>{{ibx}}</li>
+    {% empty %}
+    <li>No IBX have been added yet.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'workvisits:new_ibx' %}">Add IBX</a>
+{% endblock content %}

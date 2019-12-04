@@ -1,0 +1,14 @@
+{% extends 'WorkVisits/base.html' %}
+
+{% block content %}
+<p>Visitor Details:</p>
+
+<p>Date Added: {{vd.date_added|date:'M d, Y H:i' }} </p>
+<p>First Name: {{vd.visitor_fname}}</p>
+<p>Last Name: {{vd.visitor_lname}}</p>
+<p>Age: {{vd.visitor_age}}</p>
+<p>Address: {{vd.visitor_address}}</p>
+<p>Company: {{vd.visitor_company}}</p>
+
+
+{% endblock content %}

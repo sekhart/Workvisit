@@ -1,0 +1,14 @@
+{% extends 'WorkVisits/base.html'%}
+
+{% block content %}
+<p>Cage/Suit:</p>
+
+<ul>
+    {% for cage in cages %}
+    <li>{{cage}}</li>
+    {% empty %}
+    <li>No Cage have been added yet.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'workvisits:new_cage' %}">Add Cage</a>
+{% endblock content %}

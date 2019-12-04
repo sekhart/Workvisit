@@ -1,0 +1,12 @@
+{% extends 'WorkVisits/base.html' %}
+
+{% block content %}
+<p>Add Cage:</p>
+
+<form action="{% url 'workvisits:new_cage' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Add Cage</button>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'WorkVisits/base.html' %}
+
+{% block content %}
+<p>Add Visitors:</p>
+
+<form name="{%url 'workvisits:new_visitor' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Add Visitor</button>
+</form>
+{% endblock content %}

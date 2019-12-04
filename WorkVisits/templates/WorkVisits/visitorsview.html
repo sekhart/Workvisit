@@ -1,0 +1,16 @@
+{% extends 'WorkVisits/base.html'%}
+
+{% block content %}
+<p>Visitors:</p>
+
+<ul>
+    {% for visitor in visitors %}
+    <li>
+        <a href="{% url 'workvisits:visitor_details'  visitor.id %}">{{visitor}}</a>
+    </li>
+    {% empty %}
+    <li>No visitor have been added yet.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'workvisits:new_visitor' %}">Add Visitor</a>
+{% endblock content %}

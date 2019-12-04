@@ -1,0 +1,14 @@
+{% extends 'WorkVisits/base.html'%}
+
+{% block content %}
+<p>Cabinets:</p>
+
+<ul>
+    {% for cabinet in cabinets %}
+    <li>{{cabinet}}</li>
+    {% empty %}
+    <li>No cabinet have been added yet.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'workvisits:new_cabinet' %}">Add Cabinet</a>
+{% endblock content %}

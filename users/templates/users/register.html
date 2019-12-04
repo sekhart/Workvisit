@@ -1,0 +1,12 @@
+{% extends 'WorkVisits/base.html' %}
+
+{% block content %}
+<p>Register User:</p>
+<form method="post" action="{% url 'users:register' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button name="submit">register</button>
+    <input type="hidden" name="next" value="{% url 'workvisits:home' %}" />
+</form>
+{% endblock content %}

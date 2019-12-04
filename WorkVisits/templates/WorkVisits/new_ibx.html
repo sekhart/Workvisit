@@ -1,0 +1,11 @@
+{% extends 'WorkVisits/base.html' %}
+
+{% block content %}
+<p>Add a New IBX: </p>
+
+<form action="{% url 'workvisits:new_ibx' %}" method="post">
+   {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Add IBX</button>
+</form>
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'WorkVisits/base.html' %}
+
+{% block content %}
+<p>Add Cabinet: </p>
+
+<form action="{% url 'workvisits:new_cabinet'%}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Add Cabinet</button>
+</form>
+{% endblock content %}
