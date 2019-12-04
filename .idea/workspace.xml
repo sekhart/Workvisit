@@ -2,10 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b62fe17c-f460-4200-bca0-aa7ef1ce441f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/WorkVisits/migrations/0003_workvisit.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WorkVisits/migrations/0004_auto_20191204_2201.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Sekhar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Sekhar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/cabinetview.html" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/cabinetview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/cageview.html" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/cageview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/ibxview.html" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/ibxview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/new_cabinet.html" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/new_cabinet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/new_cage.html" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/new_cage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/new_ibx.html" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/new_ibx.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/new_visitor.html" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/new_visitor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/visitor_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/visitor_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/visitorsview.html" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/visitorsview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/workvisit_request.html" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/templates/WorkVisits/workvisit_request.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkVisits/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/WorkVisits/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +50,11 @@
     </option>
   </component>
   <component name="ProjectId" id="1USB3V8xpnKatf0dxrJDNLCsfpf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -67,10 +88,15 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

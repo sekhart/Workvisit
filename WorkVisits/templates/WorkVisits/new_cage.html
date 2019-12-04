@@ -1,12 +1,19 @@
 {% extends 'WorkVisits/base.html' %}
+{% load bootstrap4 %}
+
+{% block header %}
+<h2>Add Cabinet: </h2>
+{% endblock header %}
+
 
 {% block content %}
-<p>Add Cage:</p>
 
-<form action="{% url 'workvisits:new_cage' %}" method="post">
+<form action="{% url 'workvisits:new_cage' %}" method="post" class="form">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button name="submit">Add Cage</button>
+   {% bootstrap_form form %}
+    {% buttons %}
+    <button name="submit" class="btn btn-primary">Add Cage</button>
+    {% endbuttons %}
 </form>
 
 {% endblock content %}

@@ -5,7 +5,7 @@ from django.shortcuts import render
 # Create your views here.
 from django.urls import reverse
 
-from .forms import IbxForm, CageForm, CabinetsForm, VisitorsForm
+from .forms import IbxForm, CageForm, CabinetsForm, VisitorsForm, WorkVisitRequestForm
 from WorkVisits.models import Ibx, Cage, Cabinets, Visitors
 
 
@@ -108,3 +108,17 @@ def visitor_details(request, visitor_id):
     vd = Visitors.objects.get(id=visitor_id)
     context = {'vd': vd}
     return render(request, 'workvisits/visitor_details.html', context)
+
+
+@login_required
+def workvisit_request(request):
+    """Add Work visitor entry"""
+    if request.method != 'POST':
+        form = WorkVisitRequestForm()
+    else:
+        form = WorkVisitRequestForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('workvisits:home'))
+    context = {'form': form}
+    return render(request, 'workvisits/workvisit_request.html', context)

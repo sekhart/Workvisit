@@ -1,11 +1,18 @@
 {% extends 'WorkVisits/base.html' %}
+{% load bootstrap4 %}
+
+{% block header %}
+<h2>Add Visitor: </h2>
+{% endblock header %}
+
 
 {% block content %}
-<p>Add Visitors:</p>
 
-<form name="{%url 'workvisits:new_visitor' %}" method="post">
+<form name="{%url 'workvisits:new_visitor' %}" method="post" class="form">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button name="submit">Add Visitor</button>
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button name="submit" class="btn btn-primary">Add Visitor</button>
+    {% endbuttons %}
 </form>
 {% endblock content %}

@@ -1,16 +1,22 @@
 {% extends 'WorkVisits/base.html'%}
+{% load bootstrap4 %}
+
+{% block header %}
+<h2>Visitors: </h2>
+{% endblock header %}
+
 
 {% block content %}
-<p>Visitors:</p>
-
+<p><a href="{% url 'workvisits:new_visitor' %}">Add Visitor</a></p>
 <ul>
     {% for visitor in visitors %}
-    <li>
-        <a href="{% url 'workvisits:visitor_details'  visitor.id %}">{{visitor}}</a>
-    </li>
+    <h4>
+        <li>
+            <a href="{% url 'workvisits:visitor_details'  visitor.id %}">{{visitor}}</a>
+        </li>
+    </h4>
     {% empty %}
-    <li>No visitor have been added yet.</li>
+   <h4><li>No visitor have been added yet.</li></h4>
     {% endfor %}
 </ul>
-<a href="{% url 'workvisits:new_visitor' %}">Add Visitor</a>
 {% endblock content %}

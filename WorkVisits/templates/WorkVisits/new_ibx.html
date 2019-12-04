@@ -1,11 +1,18 @@
 {% extends 'WorkVisits/base.html' %}
+{% load bootstrap4 %}
+
+{% block header %}
+<h2>Add IBX: </h2>
+{% endblock header %}
+
 
 {% block content %}
-<p>Add a New IBX: </p>
 
-<form action="{% url 'workvisits:new_ibx' %}" method="post">
+<form action="{% url 'workvisits:new_ibx' %}" method="post" class="form">
    {% csrf_token %}
-    {{ form.as_p }}
-    <button name="submit">Add IBX</button>
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button name="submit" class="btn btn-primary">Add IBX</button>
+    {% endbuttons %}
 </form>
 {% endblock content %}
