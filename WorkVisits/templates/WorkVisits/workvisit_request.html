@@ -20,9 +20,10 @@
  $("#id_ibx").change(function () {
       var url = $("#wvForm").attr("data-cages-url");
       var ibxId = $(this).val();
-      console.log(ibxId);
+      console.log(ibxId)
+      request_url = '/get_cages/' + ibxId + '/';
       $.ajax({
-        url: '/load_cages/';,
+        url: request_url,
         data: {
           'wv_ibx': ibxId
         },
