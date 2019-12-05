@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     # Bootstrap3
     'bootstrap4',
 
+    'crispy_forms',
+
 ]
 
 MIDDLEWARE = [
@@ -213,3 +215,5 @@ BOOTSTRAP4 = {
         'inline': 'bootstrap4.renderers.InlineFieldRenderer',
     },
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

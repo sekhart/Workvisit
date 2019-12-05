@@ -1,14 +1,20 @@
 {% extends 'WorkVisits/base.html'%}
+{% load bootstrap4 %}
+
+{% block header %}
+<h2>IBX: </h2>
+{% endblock header %}
 
 {% block content %}
-<p>IBX:</p>
-
+<p><a href="{% url 'workvisits:new_ibx' %}">Add IBX</a></p>
 <ul>
     {% for ibx in ibxs %}
-    <li>{{ibx}}</li>
+    <h4>
+        <li>{{ibx}}</li>
+    </h4>
+
     {% empty %}
-    <li>No IBX have been added yet.</li>
+   <h4> <li>No IBX have been added yet.</li></h4>
     {% endfor %}
 </ul>
-<a href="{% url 'workvisits:new_ibx' %}">Add IBX</a>
 {% endblock content %}

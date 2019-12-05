@@ -1,11 +1,13 @@
+import simplejson as simplejson
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
 from django.urls import reverse
 
-from .forms import IbxForm, CageForm, CabinetsForm, VisitorsForm
+from WorkVisits import models
+from .forms import IbxForm, CageForm, CabinetsForm, VisitorsForm, WorkVisitRequestForm
 from WorkVisits.models import Ibx, Cage, Cabinets, Visitors
 
 
@@ -108,3 +110,35 @@ def visitor_details(request, visitor_id):
     vd = Visitors.objects.get(id=visitor_id)
     context = {'vd': vd}
     return render(request, 'workvisits/visitor_details.html', context)
+
+
+@login_required
+def workvisit_request(request):
+    """Add Work visitor entry"""
+    if request.method != 'POST':
+        form = WorkVisitRequestForm()
+    else:
+        form = WorkVisitRequestForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('workvisits:home'))
+    context = {'form': form}
+    return render(request, 'workvisits/workvisit_request.html', context)
+
+
+def get_cages(request, ibx_id):
+    ibx = models.Ibx.objects.get(pk=ibx_id)
+    cages = models.Cage.objects.filter(ibx_name=ibx)
+    print('getting Cages----')
+    cage_dict = {}
+    for cage in cages:
+        cage_dict[cage.id] = cage.cage_name
+    print(cage_dict)
+    return HttpResponse(simplejson.dumps(cage_dict))
+
+
+def load_cages(request):
+    ibx_id = request.GET.get('wv_ibx')
+    cages = Cage.objects.filter(ibx_id=ibx_id).order_by('cage_name')
+    print(cages)
+    return render(request, 'workvisits/cage_dropdown_list_options.html', {'cages': cages})

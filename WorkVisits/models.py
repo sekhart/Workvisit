@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 # Create your models here.
@@ -58,15 +60,8 @@ class WorkVisit(models.Model):
     wv_ibx = models.ForeignKey(Ibx, on_delete=models.CASCADE)
     wv_cage = models.ForeignKey(Cage, on_delete=models.CASCADE)
     wv_cabinet = models.ForeignKey(Cabinets, on_delete=models.CASCADE)
-    wv_visitors = models.ForeignKey(Visitors, on_delete=models.CASCADE)
-    wv_start_date_time = models.DateTimeField()
-    visitor_fname = models.CharField('first name', max_length=250)
-    visitor_lname = models.CharField('last name', max_length=250)
-    visitor_uname = models.CharField('user name', max_length=250)
-    visitor_age = models.IntegerField('Age')
-    visitor_address = models.CharField('Address', max_length=250)
-    visitor_company = models.CharField('Company', max_length=250)
     date_added = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(User, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.visitor_fname[:250] + " "+self.visitor_lname[:250]
+        return self.wv_ibx[:250] + " "+self.wv_cage[:250]

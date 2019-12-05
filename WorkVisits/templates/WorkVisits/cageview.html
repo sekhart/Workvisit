@@ -1,14 +1,24 @@
 {% extends 'WorkVisits/base.html'%}
+{% load bootstrap4 %}
+
+{% block header %}
+<h2>Cage/Suit: </h2>
+{% endblock header %}
+
 
 {% block content %}
-<p>Cage/Suit:</p>
-
+<p><a href="{% url 'workvisits:new_cage' %}">Add Cage</a></p>
 <ul>
     {% for cage in cages %}
-    <li>{{cage}}</li>
+    <h4>
+        <li>{{cage}}</li>
+    </h4>
+
     {% empty %}
-    <li>No Cage have been added yet.</li>
+    <h4>
+        <li>No Cage have been added yet.</li>
+    </h4>
+
     {% endfor %}
 </ul>
-<a href="{% url 'workvisits:new_cage' %}">Add Cage</a>
 {% endblock content %}

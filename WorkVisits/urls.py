@@ -14,4 +14,7 @@ urlpatterns = [
     url('^new_cabinet', views.new_cabinet, name='new_cabinet'),
     url('^new_visitor', views.new_visitor, name='new_visitor'),
     url('visitor_details/(?P<visitor_id>\d+)/$', views.visitor_details, name='visitor_details'),
+    url('^workvisit_request', views.workvisit_request, name='workvisit_request'),
+    url('get_cages/(?P<ibx_id>\d+)/$', views.get_cages, name='get_cages'),
+    url('load-ccages/', views.load_cages, name='load_cages'),  # <-- this one here
 ]

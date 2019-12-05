@@ -1,14 +1,29 @@
 {% extends 'WorkVisits/base.html' %}
+{% load bootstrap4 %}
+
+{% block header %}
+<h2>Visitor Details: </h2>
+{% endblock header %}
+
 
 {% block content %}
-<p>Visitor Details:</p>
+<p><a href = "{% url 'workvisits:new_visitor' %}">Add a new Visitor</a></p>
 
-<p>Date Added: {{vd.date_added|date:'M d, Y H:i' }} </p>
-<p>First Name: {{vd.visitor_fname}}</p>
-<p>Last Name: {{vd.visitor_lname}}</p>
-<p>Age: {{vd.visitor_age}}</p>
-<p>Address: {{vd.visitor_address}}</p>
-<p>Company: {{vd.visitor_company}}</p>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3>
+            {{vd.date_added|date:'M d, Y H:i' }}
+            <small>
 
-
+            </small>
+        </h3>
+    </div>
+    <div class="panel-body">
+        <p>First Name: {{vd.visitor_fname}}</p>
+        <p>Last Name: {{vd.visitor_lname}}</p>
+        <p>Age: {{vd.visitor_age}}</p>
+        <p>Address: {{vd.visitor_address}}</p>
+        <p>Company: {{vd.visitor_company}}</p>
+    </div>
+</div> <!-- panel -->
 {% endblock content %}
