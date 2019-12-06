@@ -3,6 +3,7 @@ from crispy_forms.layout import Row, Layout, Column, Submit, Fieldset
 from django import forms
 
 from WorkVisits import models
+
 from WorkVisits.models import Ibx, Cage, Cabinets, Visitors, WorkVisit
 
 
@@ -30,11 +31,11 @@ class CabinetsForm(forms.ModelForm):
 class VisitorsForm(forms.ModelForm):
     class Meta:
         model = Visitors
+
         fields = ['visitor_fname', 'visitor_lname', 'visitor_uname', 'visitor_age', 'visitor_address',
                   'visitor_company']
         labels = {'visitor_fname': 'First Name', 'visitor_lname': 'Last Name', 'visitor_uname': 'User Name',
                   'visitor_age': 'Age', 'visitor_address': 'Address', 'visitor_company': 'Company'}
-
 
 class WorkVisitRequestForm(forms.ModelForm):
     class Meta:
@@ -122,3 +123,4 @@ class WorkVisitRequestForm1(forms.Form):
             'check_me_out',
             Submit('submit', 'Sign in')
         )
+

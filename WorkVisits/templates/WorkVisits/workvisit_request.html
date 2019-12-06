@@ -10,6 +10,7 @@
 <div class="container">
 <p>Schedule a Work Visit by providing IBX and Cage you will need access to, the dates and times to visit,
  and some basic information about the visitors who will be arriving at the site. </p>
+
     <form id="wvForm" data-cages-url="{% url 'workvisits:load_cages' %}" method="POST" class="form" novalidate>
         {% crispy form %}
     </form>
@@ -31,8 +32,6 @@
           $("#id_cage").html(data);
         }
       });
-
     });
-
 </script>
 {% endblock %}
