@@ -48,7 +48,7 @@
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
                 {% if user.is_authenticated %}
-                 <li class="nav-item"><a class="nav-link">Hello, {{ user.username }}.</a></li>
+                 <li class="nav-item"><a class="nav-link" href="{% url 'users:user_details' user.id %}">Hello, {{ user.username }}.</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'users:logout' %}">Log out</a></li>
                 {% else %}
                 <li class="nav-item"><a class="nav-link" href="{% url 'users:register' %}">Register</a></li>

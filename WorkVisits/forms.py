@@ -37,17 +37,6 @@ class VisitorsForm(forms.ModelForm):
         labels = {'visitor_fname': 'First Name', 'visitor_lname': 'Last Name', 'visitor_uname': 'User Name',
                   'visitor_age': 'Age', 'visitor_address': 'Address', 'visitor_company': 'Company'}
 
-class WorkVisitRequestForm(forms.ModelForm):
-    class Meta:
-        model = WorkVisit
-        fields = ['wv_ibx', 'wv_cage', 'wv_cabinet']
-        labels = {'wv_ibx': 'IBX', 'wv_cage': 'Cage', 'wv_cabinet': 'Cabinet'}
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['wv_cage'].queryset = Cage.objects.none()
-
-
 STATES = (
     ('', 'Choose...'),
     ('MG', 'Minas Gerais'),
@@ -56,7 +45,7 @@ STATES = (
 )
 
 
-class WorkVisitRequestForm111(forms.Form):
+class WorkVisitRequestForm(forms.Form):
     ibx = forms.ModelChoiceField(queryset=models.Ibx.objects.all())
     cage = forms.ModelChoiceField(queryset=models.Cage.objects.none())  # Need to populate this using jquery
     cabinet = forms.ModelChoiceField(queryset=models.Cabinets.objects.none())  # Need to populate this using jquery
@@ -87,40 +76,4 @@ class WorkVisitRequestForm111(forms.Form):
             Submit('submit', 'Sign in')
         )
 
-
-class WorkVisitRequestForm1(forms.Form):
-    email = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Email'}))
-    password = forms.CharField(widget=forms.PasswordInput())
-    address_1 = forms.CharField(
-        label='Address',
-        widget=forms.TextInput(attrs={'placeholder': '1234 Main St'})
-    )
-    address_2 = forms.CharField(
-        widget=forms.TextInput(attrs={'placeholder': 'Apartment, studio, or floor'})
-    )
-    city = forms.CharField()
-    state = forms.ChoiceField(choices=STATES)
-    zip_code = forms.CharField(label='Zip')
-    check_me_out = forms.BooleanField(required=False)
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.helper = FormHelper()
-        self.helper.layout = Layout(
-            Row(
-                Column('email', css_class='form-group col-md-6 mb-0'),
-                Column('password', css_class='form-group col-md-6 mb-0'),
-                css_class='form-row'
-            ),
-            'address_1',
-            'address_2',
-            Row(
-                Column('city', css_class='form-group col-md-6 mb-0'),
-                Column('state', css_class='form-group col-md-4 mb-0'),
-                Column('zip_code', css_class='form-group col-md-2 mb-0'),
-                css_class='form-row'
-            ),
-            'check_me_out',
-            Submit('submit', 'Sign in')
-        )
 

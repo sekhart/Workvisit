@@ -1,5 +1,7 @@
 from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
@@ -34,3 +36,11 @@ def register(request):
             return HttpResponseRedirect(reverse('workvisits:home'))
     context = {'form': form}
     return render(request, 'users/register.html', context)
+
+
+@login_required
+def user_details(request, user_id):
+    """display visitor details"""
+    ud = User.objects.get(id=user_id)
+    context = {'ud': ud}
+    return render(request, 'users/user_details.html', context)
