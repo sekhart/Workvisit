@@ -1,5 +1,8 @@
 from django.conf.urls import url
 from . import views
+from django.conf import settings
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 app_name = 'WorkVisit'
 
@@ -18,3 +21,6 @@ urlpatterns = [
     url('get_cages/(?P<ibx_id>\d+)/$', views.get_cages, name='get_cages'),
     url('load-ccages/', views.load_cages, name='load_cages'),  # <-- this one here
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

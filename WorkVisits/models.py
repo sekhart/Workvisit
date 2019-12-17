@@ -47,6 +47,7 @@ class Visitors(models.Model):
     visitor_age = models.IntegerField('Age')
     visitor_address = models.CharField('Address', max_length=250)
     visitor_company = models.CharField('Company', max_length=250)
+    photo = models.FileField(upload_to="gallery")
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

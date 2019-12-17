@@ -33,9 +33,9 @@ class VisitorsForm(forms.ModelForm):
         model = Visitors
 
         fields = ['visitor_fname', 'visitor_lname', 'visitor_uname', 'visitor_age', 'visitor_address',
-                  'visitor_company']
+                  'visitor_company', 'photo']
         labels = {'visitor_fname': 'First Name', 'visitor_lname': 'Last Name', 'visitor_uname': 'User Name',
-                  'visitor_age': 'Age', 'visitor_address': 'Address', 'visitor_company': 'Company'}
+                  'visitor_age': 'Age', 'visitor_address': 'Address', 'visitor_company': 'Company', 'photo': 'Picture'}
 
 STATES = (
     ('', 'Choose...'),

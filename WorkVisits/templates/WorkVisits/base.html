@@ -1,5 +1,7 @@
 {# Load the tag library #}
 {% load bootstrap4 %}
+{% load static %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,8 +10,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Work Visit App</title>
-    <link rel = "icon" href =https://img.icons8.com/color/96/000000/rgb-circle-1--v1.png"
-        type = "image/x-icon">
+    <link rel = "icon" href ="{% static 'images/worker.png' %}"
+        type = "image/png">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
     {# Load CSS and JavaScript #}
     {% bootstrap_css %}
@@ -23,7 +26,7 @@
 <!-- Static navbar -->
 <div class="container">
     <nav class="navbar navbar-expand-md navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'workvisits:workvisit_request' %}">Work Visit</a>
+        <h2><a class="navbar-brand" href="{% url 'workvisits:workvisit_request' %}"><img src="{% static 'images/worker-helmet.png' %}"></a></h2>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

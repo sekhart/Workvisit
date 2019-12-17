@@ -97,7 +97,7 @@ def new_visitor(request):
     if request.method != 'POST':
         form = VisitorsForm()
     else:
-        form = VisitorsForm(request.POST)
+        form = VisitorsForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('workvisits:visitorsview'))
